@@ -14,7 +14,6 @@ spec:
               values:
                 addonChart: kratix
                 # anything not staging or prod use this version
-                # addonChartVersion: 0.76.0
                 addonChartRepositoryNamespace: kratix-platform-system
                 addonChartRepository: https://github.com/syntasso/helm-charts.git
               selector:
@@ -28,14 +27,12 @@ spec:
                   environment: staging
               values:
                 {}
-                # addonChartVersion: 0.76.0
           - clusters:
               selector:
                 matchLabels:
                   environment: prod
               values:
                 {}
-                # addonChartVersion: 0.76.0
   template:
     metadata:
       name: addon-{{name}}-{{values.addonChart}}
